@@ -1,10 +1,14 @@
 package main.java.com.funcooking.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private final String firstName;
     private final String lastName;
     private final String fullName;
     private final String email;
+    private List<Recipe> recipesList = new ArrayList<>();
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -27,6 +31,14 @@ public class User {
 
     public String getFullName() {
         return fullName;
+    }
+
+    public List<Recipe> getRecipesList() {
+        return recipesList;
+    }
+
+    public void addRecipe(Recipe recipe) {
+        recipesList.add(recipe);
     }
 
     @Override
