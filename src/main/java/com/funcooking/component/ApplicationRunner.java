@@ -18,6 +18,7 @@ public class ApplicationRunner {
             user.addRecipe(recipe);
             System.out.println("New recipe added: " + recipe.getRecipeID() + " - "
                     + recipe.getRecipeTitle());
+            System.out.println(recipe);
         }
     }
 }
