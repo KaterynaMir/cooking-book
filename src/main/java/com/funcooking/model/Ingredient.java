@@ -13,7 +13,7 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        return name + " - " + quantity + " " + measure;
+        return name + " - " + quantity + " " + measure.toString().toLowerCase();
     }
 
     public String getName() {
