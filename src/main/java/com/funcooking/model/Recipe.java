@@ -1,17 +1,16 @@
 package main.java.com.funcooking.model;
 
-import java.time.Duration;
 import java.util.ArrayList;
-public abstract class Recipe {
-    static int numRecipes = 0;
+public class Recipe {
+    public static int numRecipes = 0;
     private final int recipeID;
     private String recipeTitle;
     private ArrayList<Ingredient> mainIngredients;          // non-empty list
     private ArrayList<Ingredient> optionalIngredients;      // can be empty
     private String instructions;
-    private Duration preparationTime = Duration.ofMinutes(0);
-    private Duration cookingTime = Duration.ofMinutes(0);
-    private Duration totalTime;
+    private int preparationTime = 0;
+    private int cookingTime = 0;
+    private int totalTime;
     private Complexity complexity;
     boolean isVegetarian;
     private String author;
@@ -22,14 +21,14 @@ public abstract class Recipe {
     }
 
     public Recipe(ArrayList<Ingredient> mainIngredients, ArrayList<Ingredient> optionalIngredients,
-                  String instructions, Duration preparationTime, Duration cookingTime,
+                  String instructions, int preparationTime, int cookingTime,
                   Complexity complexity, boolean isVegetarian, String author) {
         this.mainIngredients = mainIngredients;
         this.optionalIngredients = optionalIngredients;
         this.instructions = instructions;
         this.preparationTime = preparationTime;
         this.cookingTime = cookingTime;
-        this.totalTime = preparationTime.plus(cookingTime);
+        this.totalTime = preparationTime + cookingTime;
         this.complexity = complexity;
         this.isVegetarian = isVegetarian;
         this.author = author;
@@ -44,9 +43,9 @@ public abstract class Recipe {
                 "\n\n\tMain ingredients: " + buildStringFromIngredientsList(mainIngredients) +
                 "\n\n\tOptional ingredients: " + buildStringFromIngredientsList(optionalIngredients) +
                 "\n\n\tInstructions: '" + instructions + '\'' +
-                "\n\n\tPreparation time = " + preparationTime.toMinutes() + " min" +
-                "\n\tCooking time = " + cookingTime.toMinutes() + " min" +
-                "\n\tTotal time = " + totalTime.toMinutes() + " min" +
+                "\n\n\tPreparation time = " + preparationTime + " min" +
+                "\n\tCooking time = " + cookingTime + " min" +
+                "\n\tTotal time = " + totalTime + " min" +
                 "\n\n\tComplexity = " + complexity.toString().toLowerCase() +
                 "\n\tisVegetarian = " + isVegetarian +
                 "\n\n\tAuthor: " + author;
@@ -97,28 +96,28 @@ public abstract class Recipe {
         this.instructions = instructions;
     }
 
-    public Duration getPreparationTime() {
+    public int getPreparationTime() {
         return preparationTime;
     }
 
-    public void setPreparationTime(Duration preparationTime) {
+    public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
 
-    public Duration getCookingTime() {
+    public int getCookingTime() {
         return cookingTime;
     }
 
-    public void setCookingTime(Duration cookingTime) {
+    public void setCookingTime(int cookingTime) {
         this.cookingTime = cookingTime;
     }
 
-    public Duration getTotalTime() {
+    public int getTotalTime() {
         return totalTime;
     }
 
     public void setTotalTime() {
-        totalTime = preparationTime.plus(cookingTime);
+        totalTime = preparationTime + cookingTime;
     }
 
     public Complexity getComplexity() {
