@@ -4,7 +4,6 @@ import main.java.com.funcooking.Main;
 import main.java.com.funcooking.model.*;
 import main.java.com.funcooking.utils.InputValidator;
 
-import java.time.Duration;
 import java.util.ArrayList;
 
 public class RecipeWriter {
@@ -12,7 +11,7 @@ public class RecipeWriter {
     private static final String COMPLEXITY_PATTERN = "^(easy|e|medium|m|hard|h)$";
     private static final String YES_OR_NO = "^(y|yes|n|no)$";
     private static final String POSITIVE_INT_PATTERN = "^[1-9]+\\d*$";
-    private static final String POSITIVE_NUMBER_PATTERN = "^\\d*[\\.]?\\d*[1-9]+\\d*$";
+    private static final String POSITIVE_NUMBER_PATTERN = "^(\\d*[\\.]?\\d*[1-9]+\\d*|[1-9]+\\d*[\\.]?\\d*)$";
 
     public Recipe writeRecipe(int recipeType) {
         Recipe recipe = recipeOfType(recipeType);
@@ -35,12 +34,12 @@ public class RecipeWriter {
         System.out.print("Preparation time in minutes: ");
         String preparationTimeString = InputValidator.readAndValidateInput(POSITIVE_INT_PATTERN,
                 "positive integer number");
-        recipe.setPreparationTime(Duration.ofMinutes(Long.parseLong(preparationTimeString)));
+        recipe.setPreparationTime(Integer.parseInt(preparationTimeString));
 
         System.out.print("Cooking time in minutes: ");
         String cookingTimeString = InputValidator.readAndValidateInput(POSITIVE_INT_PATTERN,
                 "positive integer number");
-        recipe.setCookingTime(Duration.ofMinutes(Long.parseLong(cookingTimeString)));
+        recipe.setCookingTime(Integer.parseInt(cookingTimeString));
 
         recipe.setTotalTime();
 
