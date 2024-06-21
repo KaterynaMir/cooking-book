@@ -47,7 +47,7 @@ public abstract class Recipe {
                 "\n\n\tPreparation time = " + preparationTime.toMinutes() + " min" +
                 "\n\tCooking time = " + cookingTime.toMinutes() + " min" +
                 "\n\tTotal time = " + totalTime.toMinutes() + " min" +
-                "\n\n\tComplexity = " + complexity +
+                "\n\n\tComplexity = " + complexity.toString().toLowerCase() +
                 "\n\tisVegetarian = " + isVegetarian +
                 "\n\n\tAuthor: " + author;
     }
@@ -146,6 +146,24 @@ public abstract class Recipe {
     }
 
     public enum Complexity {
-        EASY, MEDIUM, HARD
+        EASY ("e"), MEDIUM("m"), HARD("h"), UNDEFINED("u");
+
+        private final String shortForm;
+        Complexity(String shortForm) {
+            this.shortForm = shortForm;
+        }
+
+        private String getShortForm() {
+            return shortForm;
+        }
+        public static Complexity fromString(String complexityString) {
+            for (Complexity complexity : values()) {
+                if (complexity.toString().equals(complexityString.toUpperCase()) ||
+                        complexity.getShortForm().equals(complexityString)) {
+                    return complexity;
+                }
+            }
+            return UNDEFINED;
+        }
     }
 }

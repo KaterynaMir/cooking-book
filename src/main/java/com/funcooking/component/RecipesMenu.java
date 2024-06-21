@@ -1,6 +1,6 @@
 package main.java.com.funcooking.component;
 
-import static main.java.com.funcooking.Main.SCANNER;
+import main.java.com.funcooking.utils.InputValidator;
 public class RecipesMenu {
 
     public int printMenu () {
@@ -13,17 +13,9 @@ public class RecipesMenu {
                 \t4 - for Baking
                 \t5 - for Dessert
                 :\s""");
-        String choice = checkAndValidateAnswer(SCANNER.nextLine());
+        String choice = InputValidator.readAndValidateInput("^[1-5]$",
+                "1/2/3/4/5");
         return Integer.parseInt(choice);
-    }
-
-    private String checkAndValidateAnswer(String answer) {
-        answer = answer.trim();
-        while(!answer.matches("^[1-5]$")) {
-            System.out.print("Invalid choice. Please, try again: ");
-            answer = SCANNER.nextLine().trim();
-        }
-        return answer;
     }
 
 }
