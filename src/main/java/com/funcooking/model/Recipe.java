@@ -37,6 +37,30 @@ public abstract class Recipe {
         recipeID = numRecipes;
     }
 
+    @Override
+    public String toString() {
+        return "\tRecipe ID: " + recipeID +
+                "\n\tRecipe Title: " + recipeTitle +
+                "\n\n\tMain ingredients: " + buildStringFromIngredientsList(mainIngredients) +
+                "\n\n\tOptional ingredients: " + buildStringFromIngredientsList(optionalIngredients) +
+                "\n\n\tInstructions: '" + instructions + '\'' +
+                "\n\n\tPreparation time = " + preparationTime.toMinutes() + " min" +
+                "\n\tCooking time = " + cookingTime.toMinutes() + " min" +
+                "\n\tTotal time = " + totalTime.toMinutes() + " min" +
+                "\n\n\tComplexity = " + complexity +
+                "\n\tisVegetarian = " + isVegetarian +
+                "\n\n\tAuthor: " + author;
+    }
+
+    private String buildStringFromIngredientsList(ArrayList<Ingredient> ingredients) {
+        StringBuilder ingredientsString= new StringBuilder();
+        for (Ingredient ingredient : ingredients) {
+            ingredientsString.append("\n\t")
+                    .append(ingredient);
+        }
+        return ingredientsString.toString();
+    }
+
     public int getRecipeID() {
         return recipeID;
     }
