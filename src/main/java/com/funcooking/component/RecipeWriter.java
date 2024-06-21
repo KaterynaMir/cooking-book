@@ -12,7 +12,7 @@ public class RecipeWriter {
     private static final String COMPLEXITY_PATTERN = "^(easy|e|medium|m|hard|h)$";
     private static final String YES_OR_NO = "^(y|yes|n|no)$";
     private static final String POSITIVE_INT_PATTERN = "^[1-9]+\\d*$";
-    private static final String POSITIVE_NUMBER_PATTERN = "^[1-9]+\\d*\\.*\\d*$";
+    private static final String POSITIVE_NUMBER_PATTERN = "^\\d*[\\.]?\\d*[1-9]+\\d*$";
 
     public Recipe writeRecipe(int recipeType) {
         Recipe recipe = recipeOfType(recipeType);
