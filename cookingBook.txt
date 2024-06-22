@@ -1,0 +1,84 @@
+[
+  {
+    "recipeID": 1,
+    "recipeType": "SOUP",
+    "recipeTitle": "Zuccini soup",
+    "mainIngredients": [
+      {
+        "name": "zuccini",
+        "quantity": 2.0,
+        "measure": "PC"
+      },
+      {
+        "name": "carrot",
+        "quantity": 0.5,
+        "measure": "PC"
+      },
+      {
+        "name": "rice",
+        "quantity": 20.0,
+        "measure": "G"
+      },
+      {
+        "name": "milk",
+        "quantity": 100.0,
+        "measure": "ML"
+      }
+    ],
+    "optionalIngredients": [
+      {
+        "name": "salt",
+        "quantity": 2.0,
+        "measure": "G"
+      },
+      {
+        "name": "butter",
+        "quantity": 5.0,
+        "measure": "G"
+      }
+    ],
+    "instructions": "Wash and peel the vegetables, cut them into pieces and put into boiling water. Add washed rice and salt. Boil for 20 min. Pour out the liquid. Blender, add milk. Bring to a boil. Optionally add butter and more salt.",
+    "preparationTime": 5,
+    "cookingTime": 25,
+    "totalTime": 30,
+    "complexity": "EASY",
+    "isVegetarian": true,
+    "author": "Qwer Tyui"
+  },
+  {
+    "recipeID": 2,
+    "recipeType": "SALAD",
+    "recipeTitle": "Tomato and feta salad",
+    "mainIngredients": [
+      {
+        "name": "tomato",
+        "quantity": 2.0,
+        "measure": "PC"
+      },
+      {
+        "name": "feta",
+        "quantity": 50.0,
+        "measure": "G"
+      }
+    ],
+    "optionalIngredients": [
+      {
+        "name": "salt",
+        "quantity": 0.5,
+        "measure": "G"
+      },
+      {
+        "name": "pepper",
+        "quantity": 0.1,
+        "measure": "G"
+      }
+    ],
+    "instructions": "Wash tomatoes and cut them into slices. Put on the plate. Put feta over tomatoes. Optionally add salt and pepper.",
+    "preparationTime": 1,
+    "cookingTime": 5,
+    "totalTime": 6,
+    "complexity": "EASY",
+    "isVegetarian": true,
+    "author": "Qwer Tyui"
+  }
+]

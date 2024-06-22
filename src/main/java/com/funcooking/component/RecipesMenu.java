@@ -12,9 +12,10 @@ public class RecipesMenu {
                 \t3 - for Salad
                 \t4 - for Baking
                 \t5 - for Dessert
+                \t6 - for Beverage
                 :\s""");
-        String choice = InputValidator.readAndValidateInput("^[1-5]$",
-                "1/2/3/4/5");
+        String choice = InputValidator.readAndValidateInput("^[1-6]$",
+                "1/2/3/4/5/6");
         return Integer.parseInt(choice);
     }
 

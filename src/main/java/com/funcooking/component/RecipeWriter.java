@@ -13,8 +13,8 @@ public class RecipeWriter {
     private static final String POSITIVE_INT_PATTERN = "^[1-9]+\\d*$";
     private static final String POSITIVE_NUMBER_PATTERN = "^(\\d*[\\.]?\\d*[1-9]+\\d*|[1-9]+\\d*[\\.]?\\d*)$";
 
-    public Recipe writeRecipe(int recipeType) {
-        Recipe recipe = recipeOfType(recipeType);
+    public Recipe writeRecipe(int recipeTypeChoice) {
+        Recipe recipe = recipeOfType(recipeTypeChoice);
 
         System.out.print("Recipe title: ");
         assert recipe != null;
@@ -90,11 +90,12 @@ public class RecipeWriter {
 
     private Recipe recipeOfType(int choice) {
         switch(choice) {
-            case 1 -> { return new Soup(); }
-            case 2 -> { return new MainDish(); }
-            case 3 -> { return new Salad(); }
-            case 4 -> { return new Baking(); }
-            case 5 -> { return new Dessert(); }
+            case 1 -> { return new Recipe(Recipe.RecipeType.SOUP); }
+            case 2 -> { return new Recipe(Recipe.RecipeType.MAIN_DISH); }
+            case 3 -> { return new Recipe(Recipe.RecipeType.SALAD); }
+            case 4 -> { return new Recipe(Recipe.RecipeType.BACKING); }
+            case 5 -> { return new Recipe(Recipe.RecipeType.DESSERT); }
+            case 6 -> { return new Recipe(Recipe.RecipeType.BEVERAGE); }
             default -> { return null; }
         }
     }
