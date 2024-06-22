@@ -18,8 +18,8 @@ public class RecipesJsonSaver {
             gson.toJson(recipes, writer);
             writer.flush();
             writer.close();
-            System.out.println("New recipe has been added to the cooking book: " + recipes.getLast().getRecipeID() + " - "
-                    + recipes.getLast().getRecipeTitle());
+            System.out.println("Saving recipes to the cooking book...");
+            System.out.println("Cooking book size: " + recipes.size() + " recipes");
         } catch (IOException e) {
             System.out.println("Can't write to the file: " + filePath);
         }
