@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Recipe {
     public static int numRecipes = 0;
     private final int recipeID;
+    private RecipeType recipeType;
     private String recipeTitle;
     private ArrayList<Ingredient> mainIngredients;          // non-empty list
     private ArrayList<Ingredient> optionalIngredients;      // can be empty
@@ -17,12 +18,19 @@ public class Recipe {
 
     public Recipe() {
         numRecipes += 1;
-        recipeID = numRecipes;
+        this.recipeID = numRecipes;
     }
 
-    public Recipe(ArrayList<Ingredient> mainIngredients, ArrayList<Ingredient> optionalIngredients,
+    public Recipe(RecipeType recipeType) {
+        numRecipes += 1;
+        this.recipeID = numRecipes;
+        this.recipeType = recipeType;
+    }
+
+    public Recipe(RecipeType recipeType, ArrayList<Ingredient> mainIngredients, ArrayList<Ingredient> optionalIngredients,
                   String instructions, int preparationTime, int cookingTime,
                   Complexity complexity, boolean isVegetarian, String author) {
+        this.recipeType = recipeType;
         this.mainIngredients = mainIngredients;
         this.optionalIngredients = optionalIngredients;
         this.instructions = instructions;
@@ -33,12 +41,13 @@ public class Recipe {
         this.isVegetarian = isVegetarian;
         this.author = author;
         numRecipes += 1;
-        recipeID = numRecipes;
+        this.recipeID = numRecipes;
     }
 
     @Override
     public String toString() {
         return "\tRecipe ID: " + recipeID +
+                "\n\tRecipe type: " + recipeType.toString().toLowerCase() +
                 "\n\tRecipe Title: " + recipeTitle +
                 "\n\n\tMain ingredients: " + buildStringFromIngredientsList(mainIngredients) +
                 "\n\n\tOptional ingredients: " + buildStringFromIngredientsList(optionalIngredients) +
@@ -62,6 +71,10 @@ public class Recipe {
 
     public int getRecipeID() {
         return recipeID;
+    }
+
+    public RecipeType getRecipeType() {
+        return recipeType;
     }
 
     public String getRecipeTitle() {
@@ -164,5 +177,9 @@ public class Recipe {
             }
             return UNDEFINED;
         }
+    }
+
+    public enum RecipeType {
+        SOUP, MAIN_DISH, SALAD, DESSERT, BACKING, BEVERAGE
     }
 }
