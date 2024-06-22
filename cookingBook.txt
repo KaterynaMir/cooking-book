@@ -37,7 +37,7 @@
         "measure": "G"
       }
     ],
-    "instructions": "Wash and peel the vegetables, cut them into pieces and put into boiling water. Add washed rice and salt. Boil for 20 min. Pour out the liquid. Blender, add milk. Bring to a boil. Optionally add butter and more salt.",
+    "instructions": "Wash and peel the vegetables, cut them into pieces and put into boiling water.\n Add washed rice and salt. Boil for 20 min. Pour out the liquid.\n Blender, add milk. Bring to a boil.\n Optionally add butter and more salt.",
     "preparationTime": 5,
     "cookingTime": 25,
     "totalTime": 30,
@@ -73,10 +73,46 @@
         "measure": "G"
       }
     ],
-    "instructions": "Wash tomatoes and cut them into slices. Put on the plate. Put feta over tomatoes. Optionally add salt and pepper.",
+    "instructions": "Wash tomatoes and cut them into slices. Put on the plate.\n Put feta over tomatoes. Optionally add salt and pepper.",
     "preparationTime": 1,
     "cookingTime": 5,
     "totalTime": 6,
+    "complexity": "EASY",
+    "isVegetarian": true,
+    "author": "Qwer Tyui"
+  },
+  {
+    "recipeID": 3,
+    "recipeType": "SALAD",
+    "recipeTitle": "Carrot salad",
+    "mainIngredients": [
+      {
+        "name": "carrot",
+        "quantity": 2.0,
+        "measure": "PC"
+      },
+      {
+        "name": "garlic",
+        "quantity": 0.2,
+        "measure": "PC"
+      },
+      {
+        "name": "sour cream",
+        "quantity": 40.0,
+        "measure": "G"
+      }
+    ],
+    "optionalIngredients": [
+      {
+        "name": "salt",
+        "quantity": 3.0,
+        "measure": "G"
+      }
+    ],
+    "instructions": "Wash and peel the vegetables. Grate the carrots on a fine grater\n and grind the garlic through a garlic press. Add salt and sour cream, mix, enjoy.",
+    "preparationTime": 3,
+    "cookingTime": 10,
+    "totalTime": 13,
     "complexity": "EASY",
     "isVegetarian": true,
     "author": "Qwer Tyui"
