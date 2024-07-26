@@ -1,12 +1,13 @@
-package main.java.com.funcooking.service;
+package com.funcooking.service;
 
-import main.java.com.funcooking.model.User;
-import main.java.com.funcooking.utils.InputValidator;
+import com.funcooking.model.User;
+import com.funcooking.utils.InputValidator;
 
 public class UserService {
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     private static final String NAME_PATTERN = "^[a-zA-Z-]+$";
-    public User registerNewUser(){
+
+    public User registerNewUser() {
         System.out.println("Please, provide user information.");
         System.out.print("Email: ");
         String email = InputValidator.readAndValidateInput(EMAIL_PATTERN, "example@gmail.com");
@@ -17,8 +18,8 @@ public class UserService {
         String lastName = InputValidator.readAndValidateInput(NAME_PATTERN,
                 "at least one letter or hyphen and no spaces");
         User user = new User(capitalizeName(firstName),
-                            capitalizeName(lastName),
-                            email);
+                capitalizeName(lastName),
+                email);
         System.out.println("New user has been successfully registered!\n" + user);
         return user;
     }

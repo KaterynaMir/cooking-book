@@ -1,8 +1,8 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import main.java.com.funcooking.Main;
-import main.java.com.funcooking.model.*;
-import main.java.com.funcooking.utils.InputValidator;
+import com.funcooking.Main;
+import com.funcooking.model.*;
+import com.funcooking.utils.InputValidator;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class RecipeWriter {
         recipe.setMainIngredients(buildIngredientsList());
 
         System.out.print("Do you want to add optional ingredients? (y/n): ");
-        String answer = InputValidator.readAndValidateInput(YES_OR_NO,"yes(y) or no(n)");
+        String answer = InputValidator.readAndValidateInput(YES_OR_NO, "yes(y) or no(n)");
         if (answer.equals("y") || answer.equals("yes")) {
             recipe.setOptionalIngredients(buildIngredientsList());
         } else {
@@ -49,7 +49,7 @@ public class RecipeWriter {
         recipe.setComplexity(Recipe.Complexity.fromString(complexityString));
 
         System.out.print("Is this recipe vegetarian? ");
-        answer = InputValidator.readAndValidateInput(YES_OR_NO,"yes(y) or no(n)");
+        answer = InputValidator.readAndValidateInput(YES_OR_NO, "yes(y) or no(n)");
         recipe.setIsVegetarian(answer.equals("y") || answer.equals("yes"));
 
         System.out.print("Instructions: ");
@@ -89,14 +89,28 @@ public class RecipeWriter {
     }
 
     private Recipe recipeOfType(int choice) {
-        switch(choice) {
-            case 1 -> { return new Recipe(Recipe.RecipeType.SOUP); }
-            case 2 -> { return new Recipe(Recipe.RecipeType.MAIN_DISH); }
-            case 3 -> { return new Recipe(Recipe.RecipeType.SALAD); }
-            case 4 -> { return new Recipe(Recipe.RecipeType.BACKING); }
-            case 5 -> { return new Recipe(Recipe.RecipeType.DESSERT); }
-            case 6 -> { return new Recipe(Recipe.RecipeType.BEVERAGE); }
-            default -> { return null; }
+        switch (choice) {
+            case 1 -> {
+                return new Recipe(Recipe.RecipeType.SOUP);
+            }
+            case 2 -> {
+                return new Recipe(Recipe.RecipeType.MAIN_DISH);
+            }
+            case 3 -> {
+                return new Recipe(Recipe.RecipeType.SALAD);
+            }
+            case 4 -> {
+                return new Recipe(Recipe.RecipeType.BACKING);
+            }
+            case 5 -> {
+                return new Recipe(Recipe.RecipeType.DESSERT);
+            }
+            case 6 -> {
+                return new Recipe(Recipe.RecipeType.BEVERAGE);
+            }
+            default -> {
+                return null;
+            }
         }
     }
 }

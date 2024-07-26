@@ -1,7 +1,7 @@
-package main.java.com.funcooking.service;
+package com.funcooking.service;
 
-import main.java.com.funcooking.model.Recipe;
-import main.java.com.funcooking.utils.InputValidator;
+import com.funcooking.model.Recipe;
+import com.funcooking.utils.InputValidator;
 
 import java.util.List;
 

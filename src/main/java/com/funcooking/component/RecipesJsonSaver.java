@@ -1,8 +1,8 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import main.java.com.funcooking.model.Recipe;
+import com.funcooking.model.Recipe;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,6 +12,7 @@ public class RecipesJsonSaver {
     private final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .create();
+
     public void writeRecipesAsJson(List<Recipe> recipes, String filePath) {
         try {
             FileWriter writer = new FileWriter(filePath);

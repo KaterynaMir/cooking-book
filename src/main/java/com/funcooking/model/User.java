@@ -1,4 +1,4 @@
-package main.java.com.funcooking.model;
+package com.funcooking.model;
 
 import java.util.ArrayList;
 import java.util.List;

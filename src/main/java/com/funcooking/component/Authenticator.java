@@ -1,11 +1,11 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import static main.java.com.funcooking.Main.SCANNER;
+import static com.funcooking.Main.SCANNER;
 
 public class Authenticator {
     private static final String PASSWORD = "cook";
 
-    public static boolean auth(){
+    public static boolean auth() {
         boolean accepted = false;
         for (int i = 0; i < 3; i++) {
             System.out.print("Password: ");
