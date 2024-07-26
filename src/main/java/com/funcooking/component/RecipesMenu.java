@@ -1,9 +1,10 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import main.java.com.funcooking.utils.InputValidator;
+import com.funcooking.utils.InputValidator;
+
 public class RecipesMenu {
 
-    public int printMenu () {
+    public int printMenu() {
         System.out.print("""
                 Which type of recipe do you want to add?
                 Please enter:\s

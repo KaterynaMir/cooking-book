@@ -1,6 +1,7 @@
-package main.java.com.funcooking.model;
+package com.funcooking.model;
 
 import java.util.ArrayList;
+
 public class Recipe {
     public static int numRecipes = 0;
     private final int recipeID;
@@ -61,7 +62,7 @@ public class Recipe {
     }
 
     private String buildStringFromIngredientsList(ArrayList<Ingredient> ingredients) {
-        StringBuilder ingredientsString= new StringBuilder();
+        StringBuilder ingredientsString = new StringBuilder();
         for (Ingredient ingredient : ingredients) {
             ingredientsString.append("\n\t")
                     .append(ingredient);
@@ -158,9 +159,10 @@ public class Recipe {
     }
 
     public enum Complexity {
-        EASY ("e"), MEDIUM("m"), HARD("h"), UNDEFINED("u");
+        EASY("e"), MEDIUM("m"), HARD("h"), UNDEFINED("u");
 
         private final String shortForm;
+
         Complexity(String shortForm) {
             this.shortForm = shortForm;
         }
@@ -168,6 +170,7 @@ public class Recipe {
         private String getShortForm() {
             return shortForm;
         }
+
         public static Complexity fromString(String complexityString) {
             for (Complexity complexity : values()) {
                 if (complexity.toString().equals(complexityString.toUpperCase()) ||

@@ -1,11 +1,11 @@
-package main.java.com.funcooking.model;
+package com.funcooking.model;
 
 public class Ingredient {
     private String name;
     private double quantity;
     private Measure measure;
 
-    public Ingredient (String name, double quantity, Measure measure) {
+    public Ingredient(String name, double quantity, Measure measure) {
         this.name = name;
         this.quantity = quantity;
         this.measure = measure;

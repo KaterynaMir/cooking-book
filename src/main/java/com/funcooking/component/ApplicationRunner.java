@@ -1,8 +1,8 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import main.java.com.funcooking.model.Recipe;
-import main.java.com.funcooking.model.User;
-import main.java.com.funcooking.service.UserService;
+import com.funcooking.model.Recipe;
+import com.funcooking.model.User;
+import com.funcooking.service.UserService;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class ApplicationRunner {
                 int choice = userActionsMenu.printUserMenu();
                 continueUserAction = userActions.userAction(user, choice, cookingBook);
             }
-            recipesJsonSaver.writeRecipesAsJson(cookingBook,cookingBookPath);
+            recipesJsonSaver.writeRecipesAsJson(cookingBook, cookingBookPath);
         }
     }
 }

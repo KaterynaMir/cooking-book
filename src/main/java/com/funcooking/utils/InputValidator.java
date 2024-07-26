@@ -1,11 +1,15 @@
-package main.java.com.funcooking.utils;
+package com.funcooking.utils;
 
-import main.java.com.funcooking.Main;
+import com.funcooking.Main;
 
-public class InputValidator {
+public final class InputValidator {
+
+    private InputValidator() {
+    }
+
     public static String readAndValidateInput(String pattern, String validInputPrompt) {
         String userInput = Main.SCANNER.nextLine().trim().toLowerCase();
-        while(true) {
+        while (true) {
             if (userInput.matches(pattern)) {
                 return userInput;
             }

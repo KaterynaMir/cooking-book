@@ -1,18 +1,19 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import main.java.com.funcooking.Main;
-import main.java.com.funcooking.model.Recipe;
-import main.java.com.funcooking.model.User;
-import main.java.com.funcooking.service.RecipeService;
+import com.funcooking.Main;
+import com.funcooking.model.Recipe;
+import com.funcooking.model.User;
+import com.funcooking.service.RecipeService;
 
 import java.util.List;
 
 public class UserActions {
     private final RecipesMenu recipesMenu = new RecipesMenu();
     private final RecipeWriter recipeWriter = new RecipeWriter();
+
     public boolean userAction(User user, int menuChoice, List<Recipe> cookingBook) {
         boolean continueAction = true;
-        switch(menuChoice) {
+        switch (menuChoice) {
             case 1 -> cookingBook.forEach(recipe -> System.out.println(recipe.getRecipeID()
                     + " " + recipe.getRecipeTitle()));
             case 2 -> {

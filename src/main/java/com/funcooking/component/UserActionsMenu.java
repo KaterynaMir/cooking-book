@@ -1,9 +1,9 @@
-package main.java.com.funcooking.component;
+package com.funcooking.component;
 
-import main.java.com.funcooking.utils.InputValidator;
+import com.funcooking.utils.InputValidator;
 
 public class UserActionsMenu {
-    public int printUserMenu () {
+    public int printUserMenu() {
         System.out.print("""
                 \n-----------------------------------------------------------
                 What do you want to do?
